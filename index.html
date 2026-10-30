@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>내 조건에 맞는 파킹통장 · CMA 고르기 · 삐요</title>
+<meta name="description" content="비상금 금액, 자주 꺼내 쓰는지, 투자 대기금인지에 따라 고르는 파킹통장 · CMA 표. 2026년 10월 30일 공시 기준.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<style>
+  @font-face{font-family:'GmarketSans'; font-weight:500; font-display:swap; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff')}
+  @font-face{font-family:'GmarketSans'; font-weight:700; font-display:swap; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff')}
+  :root{
+    --ink:#1A1A1A; --sub:#3B3934; --line:#1A1A1A; --hair:#E6E3DC;
+    --blue:#2E4BFF; --blue-soft:#EDF0FF; --red:#E02020;
+    --yel:#FFF6C2; --bg:#FFFFFF; --soft:#FAF9F6;
+    --c1:#FFD8D8; --c2:#FFF0B8; --c3:#D9F2E4; --c4:#DCE3FF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{font-family:'GmarketSans',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; font-weight:500;
+    background:var(--bg); color:var(--ink); line-height:1.7; font-size:16px; word-break:keep-all; overflow-wrap:break-word;
+    letter-spacing:-.02em}
+  b,strong{font-weight:700}
+  .wrap{max-width:600px; margin:0 auto; padding:0 18px 80px}
+  .blue{color:var(--blue)} .red{color:var(--red)}
+
+  header{padding:34px 0 18px}
+  .date{font-size:14px; color:var(--sub)}
+  h1{font-weight:700; font-size:clamp(36px,10vw,50px); line-height:1.12; letter-spacing:-.05em; margin:10px 0 14px}
+  h1 .blue{display:block}
+  .lead{font-size:17px; color:var(--sub)}
+  .lead b{color:var(--ink)}
+
+  section{padding-top:38px}
+  .pill{display:inline-block; border:2.5px solid var(--line); border-radius:999px; padding:10px 20px 7px; font-size:22px; font-weight:700;
+    letter-spacing:-.04em; background:#fff}
+  .ans{font-size:17px; margin:12px 0 16px}
+  .ans::before{content:"→ "; color:var(--blue); font-weight:700}
+  p{margin:10px 0}
+  .small{font-size:15px; color:var(--sub)}
+
+  .accts{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  .acct{border:2px solid var(--line); border-radius:20px; padding:14px 14px 12px}
+  .acct .t{font-weight:700; font-size:16px}
+  .acct .v{font-weight:700; font-size:22px; letter-spacing:-.04em; line-height:1.3; margin-top:4px}
+  .acct .r{font-weight:700; font-size:28px; letter-spacing:-.04em; line-height:1.25}
+  .acct .s{font-size:13.5px; color:var(--sub); line-height:1.5}
+  .k1{background:var(--c1)} .k2{background:var(--c2)} .k3{background:var(--c3)} .k4{background:var(--c4)}
+
+  .tbl{width:100%; border-collapse:separate; border-spacing:0; border:2px solid var(--line); border-radius:18px; overflow:hidden; margin:14px 0; font-size:15px}
+  .tbl th,.tbl td{padding:11px 10px; text-align:left; border-top:1.5px solid var(--hair); vertical-align:middle; line-height:1.45}
+  .tbl tr:first-child th{border-top:none}
+  .tbl th{border-bottom:2px solid var(--line); font-weight:700}
+  .tbl td.r,.tbl th.r{text-align:right; white-space:nowrap; font-feature-settings:"tnum"}
+  .tbl td .c{display:block; font-size:13px; color:var(--sub)}
+  .tbl tr.pick td{background:var(--yel); font-weight:700}
+  .tbl tr.pick td .c{font-weight:500}
+
+  .box{border:2px solid var(--line); border-radius:22px; padding:18px 18px 16px; margin:16px 0}
+  .box.yel{background:var(--yel)}
+  .box.soft{background:var(--soft); border-color:var(--hair)}
+  .box h3{font-size:18px; font-weight:700; margin-bottom:6px; letter-spacing:-.03em}
+
+  .steps{list-style:none}
+  .steps li{padding:12px 0; border-top:1.5px dashed var(--hair); font-size:17px}
+  .steps li:first-child{border-top:none}
+  .steps .n{display:inline-grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--ink); color:#fff; font-size:14px; margin-right:8px}
+  .steps .d{display:block; font-size:15px; color:var(--sub); margin-left:36px}
+
+  footer{margin-top:44px; border-top:2px solid var(--line); padding-top:18px; font-size:14px; color:var(--sub)}
+  footer p{margin:8px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="date">2026년 10월 30일 공시 기준 · 삐요의 통장 정리표</div>
+  <h1>내 조건에 맞는<span class="blue">파킹통장 · CMA 고르기</span></h1>
+  <p class="lead">금리만 보면 헷갈려.<br><b>얼마를, 얼마나 자주 꺼내 쓰는지</b>부터 정하면 답이 나와.</p>
+</header>
+
+<section id="sum">
+  <span class="pill">한눈에 결론</span>
+  <p class="ans">내 조건 칸에서 하나만 골라</p>
+  <div class="accts">
+    <div class="acct k1"><div class="t">① 비상금 100만원 이하</div><div class="v">다올저축 쌈짓돈Ⅲ</div><div class="r">5.0%</div><div class="s">조건 없이 100만원까지</div></div>
+    <div class="acct k2"><div class="t">② 비상금 · 곧 쓸 돈</div><div class="v">다올저축 쌈짓돈Ⅲ</div><div class="r">3.5%</div><div class="s">100만원 넘는 부분, 조건 없음</div></div>
+    <div class="acct k3"><div class="t">③ 자주 꺼내 쓰는 생활비</div><div class="v">Npay 머니 우리 통장</div><div class="r">최고 4.0%</div><div class="s">200만원까지 1년, 네이버페이 적립</div></div>
+    <div class="acct k4"><div class="t">④ 투자 대기금 (ISA 넣을 돈)</div><div class="v">한투 발행어음형 CMA</div><div class="r blue">2.85%</div><div class="s">증권 계좌로 바로 이체</div></div>
+  </div>
+  <p class="small">금리는 모두 세전, 1년 기준이야. 이자에서 15.4% 세금을 떼고 받아.</p>
+</section>
+
+<section id="small">
+  <span class="pill">① 비상금 100만원 이하</span>
+  <p class="ans">소액이면 <b>100만원까지 높게 주는 곳</b></p>
+  <table class="tbl">
+    <tr><th>통장</th><th>조건</th><th class="r">금리</th></tr>
+    <tr class="pick"><td>다올저축은행<br>Fi 쌈짓돈Ⅲ 통장</td><td>없음<span class="c">100만원 이하분</span></td><td class="r">5.0%</td></tr>
+    <tr><td>SBI저축은행<br>생활파킹통장</td><td>신규고객 · 만 39세 이하 · 간편결제 등록<span class="c">200만원 이하분, 신규 우대 4%p는 1년만</span></td><td class="r">최고 7.7%</td></tr>
+    <tr><td>OK저축은행<br>OK짠테크통장Ⅱ</td><td>페이 · 카드 결제계좌 등록 + 마케팅 동의<span class="c">50만원 이하분, OK 보통예금 없는 사람</span></td><td class="r">최고 7.0%</td></tr>
+    <tr><td>대신저축은행<br>대신 더더더파킹</td><td>첫 거래 + 문자 마케팅 동의<span class="c">200만원 이하분, 우대는 1년만</span></td><td class="r">최고 6.0%</td></tr>
+  </table>
+  <p class="small">조건을 다 채울 수 있으면 위 3곳이 더 높아. 조건 챙기기 귀찮으면 쌈짓돈Ⅲ 하나면 끝.</p>
+</section>
+
+<section id="mid">
+  <span class="pill">② 비상금 · 곧 쓸 돈</span>
+  <p class="ans">수백만원 넘으면 <b>조건 없이</b> 높은 곳</p>
+  <table class="tbl">
+    <tr><th>통장</th><th>조건 · 한도</th><th class="r">금리</th></tr>
+    <tr class="pick"><td>다올저축은행<br>Fi 쌈짓돈Ⅲ 통장</td><td>없음<span class="c">100만원 넘는 부분 ~ 5천만원 (5천만원 넘는 부분 2.5%)</span></td><td class="r">3.5%</td></tr>
+    <tr><td>예가람저축은행<br>The프리미엄 멤버십 파킹통장</td><td>없음<span class="c">2억 원 미만, 넣은 돈 전체에 적용</span></td><td class="r">3.31%</td></tr>
+    <tr><td>신한저축은행<br>참신한파킹통장</td><td>없음<span class="c">1억 원 이하 (넘는 부분 2.7%), 최근 20영업일 내 입출금통장 만든 적 없어야</span></td><td class="r">3.2%</td></tr>
+    <tr><td>고려저축은행<br>보고파플러스 파킹통장</td><td>기본 3.1%, 첫 거래 · 자동이체 · 체크카드 실적마다 0.1%p<span class="c">한도 없음</span></td><td class="r">3.1~3.4%</td></tr>
+  </table>
+  <p class="ans">옮기는 게 귀찮다면, <b>1년 이자 차이</b>부터 봐</p>
+  <table class="tbl">
+    <tr><th>넣어 둔 돈</th><th class="r">쌈짓돈Ⅲ</th><th class="r">1금융 파킹 1.8%</th><th class="r">1년 차이</th></tr>
+    <tr><td>100만원</td><td class="r">5만원</td><td class="r">1.8만원</td><td class="r">약 3만원</td></tr>
+    <tr><td>300만원</td><td class="r">12만원</td><td class="r">5.4만원</td><td class="r">약 6.6만원</td></tr>
+    <tr><td>1,000만원</td><td class="r">36.5만원</td><td class="r">18만원</td><td class="r">약 18만원</td></tr>
+  </table>
+  <p class="small">세전 기준이야. 쌈짓돈Ⅲ는 100만원까지 5%, 그 위는 3.5%로 계산했어.</p>
+  <div class="box yel">
+    <h3>이 차이가 귀찮음보다 크면 옮기고</h3>
+    <p>아니면 <b>쓰던 은행 앱에서 파킹통장 하나</b> 열어 두기만 해도 시작은 충분해. 월급통장에 그냥 두는 것보다는 확실히 나아.</p>
+  </div>
+  <p class="small">예금자보호는 은행이든 저축은행이든 <b>한 곳당 1억 원</b>까지야. 1억 원이 넘으면 여러 곳에 나눠 넣어.</p>
+  <div class="box">
+    <h3>파킹통장엔 여기까지만</h3>
+    <p><b>비상금</b> : 한 달 생활비의 3~6개월치<br>
+    <b>곧 쓸 돈</b> : 1년 안에 쓸 것 (전세 보증금 · 이사비 · 청약 계약금)<br>
+    그보다 오래 묵힐 돈은 예금 · 적금이나 ISA로 보내.</p>
+  </div>
+  <div class="box soft">
+    <h3>곧 나갈 전세 보증금을 보관한다면</h3>
+    <p class="small">계약일에 그대로 나가야 하는 돈이라 투자로 흔들리면 안 돼서 파킹통장이 맞아. 몇천만원이면 넣은 돈 전체에 금리를 주는 곳(예가람)이 유리하고, 1억 원이 넘으면 두 곳에 나눠 넣어. 새로 연 통장은 처음엔 하루 이체 한도가 작게 걸리니까, <b>계약일 전에 미리 열어서 한도를 풀어 둬.</b></p>
+  </div>
+</section>
+
+<section id="often">
+  <span class="pill">③ 자주 꺼내 쓰는 돈</span>
+  <p class="ans">금리 차이보다 <b>바로 꺼내 쓰는 게</b> 더 중요</p>
+  <table class="tbl">
+    <tr><th>통장</th><th>특징</th><th class="r">금리</th></tr>
+    <tr class="pick"><td>Npay 머니<br>우리 통장</td><td>네이버페이 자주 쓰면<span class="c">200만원까지, 가입 후 1년 (1년 뒤 0.5%), 2027.4.21까지 가입 · 선착순 75만 계좌</span></td><td class="r">최고 4.0%</td></tr>
+    <tr><td>카카오뱅크<br>세이프박스</td><td>카카오뱅크 쓰면<span class="c">1억 원 한도, 쿠폰 받으면 구간별 우대 (사람마다 다름)</span></td><td class="r">1.8%</td></tr>
+  </table>
+  <p class="small">생활비랑 같은 앱에 두면 급할 때 한 번에 옮길 수 있어. 저축은행 통장은 새로 만들면 처음엔 하루 이체 한도가 작게 걸릴 수 있어서, 당장 꺼내 쓸 돈은 쓰던 은행이 편해.</p>
+</section>
+
+<section id="cma">
+  <span class="pill">④ 투자 대기금</span>
+  <p class="ans">ISA · 주식 계좌로 넘길 돈은 <b>CMA</b></p>
+  <table class="tbl">
+    <tr><th>CMA</th><th>종류</th><th class="r">금리</th></tr>
+    <tr class="pick"><td>한국투자증권</td><td>발행어음형 · 수시형<span class="c">9/4 인상</span></td><td class="r">2.85%</td></tr>
+    <tr><td>미래에셋증권</td><td>발행어음형 · 수시형<span class="c">8/31 인상</span></td><td class="r">2.60%</td></tr>
+  </table>
+  <p class="small">발행어음형 CMA는 <b>예금자보호 대상이 아니고</b> 증권사가 지급해. 그래서 오래 묵힐 돈보다, 곧 투자할 돈을 잠깐 두는 곳으로 써.</p>
+</section>
+
+<section id="perk">
+  <span class="pill">⑤ 쓰는 앱 혜택까지 챙기기</span>
+  <p class="ans">금리 + <b>결제 적립</b>까지 받으면 생활비 통장으로 실속</p>
+  <table class="tbl">
+    <tr><th colspan="2">Npay 머니 우리 통장 (우리은행)</th></tr>
+    <tr class="pick"><td>금리</td><td>200만원까지 <b>최고 4%</b><span class="c">가입하고 1년 동안, 세전</span></td></tr>
+    <tr><td>결제 적립</td><td>네이버페이 결제 <b>최대 3%</b><span class="c">네이버플러스 멤버십이면 최대 7%</span></td></tr>
+    <tr><td>체크카드</td><td>실적 없이 <b>0.5%</b><span class="c">출시 후 1년은 국내 결제 0.8% 더</span></td></tr>
+    <tr><td>주의</td><td>200만원 넘는 부분, 1년 뒤엔 <b>0.5%</b><span class="c">200만원 안쪽에서 도는 생활비에 딱</span></td></tr>
+  </table>
+  <div class="box soft">
+    <h3>카카오뱅크 세이프박스 쿠폰</h3>
+    <p class="small">앱 이벤트에서 금리 쿠폰이 뜨면 그 기간만 잠깐 옮겨 둬. 쿠폰마다 적용 구간 (예: 500만원 넘는 부분만)이 달라서 내 금액에 맞는지 먼저 봐.</p>
+  </div>
+</section>
+
+<section id="order">
+  <span class="pill">고르는 순서</span>
+  <p class="ans">이 순서로 하나씩 정하면 끝</p>
+  <div class="box">
+    <ul class="steps">
+      <li><span class="n">0</span>옮기기 귀찮으면?<span class="d">쓰던 은행 앱에서 파킹통장 하나면 OK. 여기서 멈춰도 돼</span></li>
+      <li><span class="n">1</span>곧 투자할 돈인가?<span class="d">맞으면 CMA에 두고, ISA로 바로 넘기기</span></li>
+      <li><span class="n">2</span>한 달에 몇 번씩 꺼내 쓰나?<span class="d">자주 쓰면 생활비 통장에. 네이버페이 자주 쓰면 Npay 우리 통장</span></li>
+      <li><span class="n">3</span>얼마나 넣어 두나?<span class="d">비상금은 저축은행 파킹통장. 100만원까지는 5%, 그 위는 3.5%. 곧 나갈 보증금처럼 몇천만원이면 전체에 3.31% 주는 곳</span></li>
+      <li><span class="n">4</span>더 높은 쿠폰이 뜨면 잠깐 옮기기<span class="d">쿠폰은 기간 · 구간이 정해져 있으니 끝나는 날 적어 두기</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>파킹통장 금리는 저축은행중앙회 입출금자유예금 비교공시(2026년 10월 30일 조회)와 각 은행 안내, Npay 머니 우리 통장은 시즌2 발표 기사(2026년 10월 22일), CMA 금리는 증권사 발표 기사(2026년 10월 19일) 기준이야. 금리는 자주 바뀌니 가입 전에 앱에서 꼭 확인해 줘.</p>
+  <p>특정 상품을 권하는 게 아니라 내가 고르는 기준을 정리한 표야. CMA는 원금 보장 상품이 아니야.</p>
+  <p>만든 사람 · 삐요 (@piyo_toon) · © 2026</p>
+</footer>
+</div>
+</body>
+</html>
